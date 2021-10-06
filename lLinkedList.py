@@ -45,3 +45,11 @@ class LinkedList:
 
     def insert(self, afterNode, newNode):
         pass # здесь будет ваш код
+
+n1 = Node(12)
+n2 = Node(55)
+s_list = LinkedList()
+s_list.add_in_tail(n1)
+s_list.add_in_tail(n2)
+s_list.add_in_tail(Node(128))
+s_list.print_all_nodes()
