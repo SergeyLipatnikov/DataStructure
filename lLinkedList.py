@@ -35,7 +35,13 @@ class LinkedList:
         return [] # здесь будет ваш код
 
     def delete(self, val, all=False):
-        pass # здесь будет ваш код
+        if all == False:
+            nf = s_list.find(val)
+            if nf is not None:
+                print(nf.value)
+            return False
+        else:
+            return True
 
     def clean(self):
         pass # здесь будет ваш код
