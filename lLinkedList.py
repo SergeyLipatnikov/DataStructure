@@ -40,14 +40,15 @@ class LinkedList:
         else:
             node = self.head
             while node is not None:
-                if node.value == val:
-                    temp = node.next
-                    print(temp)
-                    node.value = temp
+                if node.next.value == val:
+                    print("Check", node.next.value)
+                    node.next = node.next.next
+                    break
                 node = node.next
 
     def clean(self):
         pass # здесь будет ваш код
+
 
     def len(self):
         return 0 # здесь будет ваш код
@@ -61,9 +62,10 @@ s_list = LinkedList()
 s_list.add_in_tail(n1)
 s_list.add_in_tail(n2)
 s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(128))
-s_list.delete(128)
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(128))
+# s_list.print_all_nodes()
+s_list.delete(12)
 s_list.print_all_nodes()
