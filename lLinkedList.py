@@ -35,13 +35,16 @@ class LinkedList:
         return [] # здесь будет ваш код
 
     def delete(self, val, all=False):
-        if all == False:
-            nf = s_list.find(val)
-            if nf is not None:
-                print(nf.value)
-            return False
-        else:
+        if all:
             return True
+        else:
+            node = self.head
+            while node is not None:
+                if node.value == val:
+                    temp = node.next
+                    print(temp)
+                    node.value = temp
+                node = node.next
 
     def clean(self):
         pass # здесь будет ваш код
@@ -58,4 +61,9 @@ s_list = LinkedList()
 s_list.add_in_tail(n1)
 s_list.add_in_tail(n2)
 s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(128))
+s_list.delete(128)
 s_list.print_all_nodes()
