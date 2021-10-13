@@ -34,14 +34,19 @@ class LinkedList:
     def find_all(self, val):
         return [] # здесь будет ваш код
 
-    def delete(self, val, all=False):
-        if all:
-            return True
-        else:
-            node = self.head
+    def delete(self, val, all):
+        node = self.head
+        if node.value == val:
+            node.value = node.next.value
+            node.next = node.next.next 
+        elif all:
             while node is not None:
                 if node.next.value == val:
-                    print("Check", node.next.value)
+                    node.next = node.next.next
+                node = node.next
+        else:
+            while node is not None:
+                if node.next.value == val:
                     node.next = node.next.next
                     break
                 node = node.next
@@ -62,10 +67,11 @@ s_list = LinkedList()
 s_list.add_in_tail(n1)
 s_list.add_in_tail(n2)
 s_list.add_in_tail(Node(128))
-# s_list.add_in_tail(Node(128))
-# s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(128))
+s_list.add_in_tail(Node(77))
 # s_list.add_in_tail(Node(128))
 # s_list.add_in_tail(Node(128))
 # s_list.print_all_nodes()
-s_list.delete(12)
+s_list.delete(128,True)
 s_list.print_all_nodes()
