@@ -42,7 +42,9 @@ class LinkedList:
 
     def delete(self, val, all):
         node = self.head
-        if node.value == val:
+        if not node:
+            return
+        elif node.value == val:
             node.value = node.next.value
             node.next = node.next.next 
         if all:
@@ -57,7 +59,7 @@ class LinkedList:
                 node = node.next
         else:
             while node is not None:
-                if node.next.value == val:
+                if (node.next != None) and node.next.value == val:
                     node.next = node.next.next
                     break
                 node = node.next
@@ -92,23 +94,26 @@ n2 = Node(55)
 s_list = LinkedList()
 s_list.add_in_tail(n1)
 s_list.add_in_tail(n2)
-s_list.add_in_tail(Node(12))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(12))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(12))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(12))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(77))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(128))
-s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(12))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(12))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(12))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(12))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(77))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(128))
+# s_list.add_in_tail(Node(128))
 print(s_list.len())
 print(s_list.find_all(128))
-s_list.insert(None,36)
+s_list.delete(34,True)
+# s_list.insert(12,36)
 s_list.print_all_nodes()
+print(s_list.head.value,s_list.head.next.value, s_list.tail.value, s_list.tail.next)
 # s_list.delete(12,True)
 # s_list.print_all_nodes()
-# s_list.clean()
-# s_list.print_all_nodes()
+s_list.clean()
+s_list.print_all_nodes()
+print(s_list.head, s_list.tail)
