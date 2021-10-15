@@ -76,9 +76,15 @@ class LinkedList:
             count += 1
             node = node.next
         return count
+    # def add_in_tail(self, item):
+    #     if self.head is None:
+    #         self.head = item
+    #     else:
+    #         self.tail.next = item
+    #     self.tail = item
 
     def insert(self, afterNode, newNode):
-        if afterNode == None:
+        if afterNode is None:
             first_node = self.head
             self.head = Node(newNode)
             self.head.next = first_node
@@ -90,10 +96,10 @@ class LinkedList:
 
 
 n1 = Node(12)
-n2 = Node(55)
+# n2 = Node(55)
 s_list = LinkedList()
 s_list.add_in_tail(n1)
-s_list.add_in_tail(n2)
+# s_list.add_in_tail(n2)
 # s_list.add_in_tail(Node(12))
 # s_list.add_in_tail(Node(128))
 # s_list.add_in_tail(Node(12))
@@ -109,11 +115,11 @@ s_list.add_in_tail(n2)
 print(s_list.len())
 print(s_list.find_all(128))
 s_list.delete(34,True)
-# s_list.insert(12,36)
+s_list.insert(12,36)
 s_list.print_all_nodes()
 print(s_list.head.value,s_list.head.next.value, s_list.tail.value, s_list.tail.next)
 # s_list.delete(12,True)
 # s_list.print_all_nodes()
-s_list.clean()
-s_list.print_all_nodes()
-print(s_list.head, s_list.tail)
+# s_list.clean()
+# s_list.print_all_nodes()
+# print(s_list.head, s_list.tail)
