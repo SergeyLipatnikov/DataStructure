@@ -45,6 +45,9 @@ class LinkedList:
         if not node:
             return
         elif node.value == val:
+            if node.next is None:
+                self.clean()
+                return
             node.value = node.next.value
             node.next = node.next.next 
         if all:
@@ -97,4 +100,3 @@ class LinkedList:
                 second_node = Node(newNode)
                 second_node.next = node.next
                 node.next = second_node
-
